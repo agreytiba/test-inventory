@@ -19,6 +19,7 @@ import {
   MenuOutlined,
   UserAddOutlined,
   FileOutlined,
+  FileDoneOutlined
 } from '@ant-design/icons';
 
 const { Sider } = Layout;
@@ -43,78 +44,144 @@ function Sidebar({ collapsible }) {
   const [showLogoApp, setLogoApp] = useState(isNavMenuClose);
   const [currentPath, setCurrentPath] = useState(location.pathname);
 
-  const translate = useLanguage();
   const navigate = useNavigate();
 
   const items = [
     {
       key: 'dashboard',
       icon: <DashboardOutlined />,
-      label: <Link to={'/'}>{translate('dashboard')}</Link>,
+      label: <Link to={'/'}>{('dashboard')}</Link>,
     },
-    {
-      key: 'lead',
-      icon: <UserAddOutlined />,
-      label: <Link to={'/lead'}>{translate('lead')}</Link>,
-    },
-    {
-      key: 'offer',
-      icon: <FileOutlined />,
-      label: <Link to={'/offer'}>{translate('offer')}</Link>,
-    },
-    {
+     {
       key: 'customer',
       icon: <CustomerServiceOutlined />,
-      label: <Link to={'/customer'}>{translate('customer')}</Link>,
+      label: <Link to={'/customer'}>{('customer')}</Link>,
     },
-    // { key: 'order', icon: <ShopOutlined />, label: <Link to={'/'}>Lead</Link> Order },
-    // { key: 'inventory', icon: <InboxOutlined />, label: <Link to={'/'}>Lead</Link> Inventory },
-    // { key: 'kyc', icon: <ShoppingCartOutlined />, label: <Link to={'/'}>Lead</Link> Kyc },
-    {
-      key: 'invoice',
-      icon: <FileTextOutlined />,
-      label: <Link to={'/invoice'}>{translate('invoice')}</Link>,
+      {
+      label: ('Inventory'),
+      key: 'inventory',
+      icon: <FileDoneOutlined />,
+      children: [
+        {
+          key: 'items',
+          label: <Link to={'/item'}>{('items')}</Link>,
+        },
+        {
+          key: 'itemAdjust',
+          label: <Link to={'/item/adjustment'}>{('item_adjustment')}</Link>,
+        },
+        {
+          key: 'itemMerge',
+          label: <Link to={'/itemMerge'}>{('item_merge')}</Link>,
+        }
+      ],
     },
-    {
-      key: 'quote',
-      icon: <FileSyncOutlined />,
-      label: <Link to={'/quote'}>{translate('quote')}</Link>,
+       {
+      label: ('Sales'),
+      key: 'sales',
+      icon: <FileOutlined />,
+      children: [
+        {
+          key: 'Customer',
+          label: <Link to={'/customer'}>{('customer')}</Link>,
+        },
+        {
+          key: 'salesOrders',
+          label: <Link to={'/sales/order'}>{('sales_order')}</Link>,
+        },
+        {
+          key: 'invoice',
+          label: <Link to={'/invoice'}>{('invoice')}</Link>,
+        },
+        {
+          key: 'PaymentReceived',
+          label: <Link to={'/payment/received'}>{('pay_received')}</Link>,
+        }
+      ],
     },
-    {
-      key: 'payment',
+       {
+      label: ('Purchases'),
+      key: 'purchases',
       icon: <CreditCardOutlined />,
-      label: <Link to={'/payment'}>{translate('payment')}</Link>,
+      children: [
+        {
+          key: 'Vendor',
+          label: <Link to={'/lead'}>{('vendors')}</Link>,
+        },
+        {
+          key: 'purchaseOrder',
+          label: <Link to={'/purchase/order'}>{('purchase_order')}</Link>,
+        },
+        {
+          key: 'bills',
+          label: <Link to={'/bills'}>{('bills')}</Link>,
+        },
+        {
+          key: 'paymade',
+          label: <Link to={'/payment/made'}>{('payment_made')}</Link>,
+        },
+        {
+          key: 'purchaseReceives',
+          label: <Link to={'/purchase/receives'}>{('receives')}</Link>,
+        },
+      ],
     },
+  
+    // {
+    //   key: 'offer',
+    //   icon: <FileOutlined />,
+    //   label: <Link to={'/offer'}>{('offer')}</Link>,
+    // },
+   
+    // { key: 'inventory',  label: <Link to={'/inventory'}>Inventory</Link>},
+    // { key: 'order', icon: <ShopOutlined />, label: <Link to={'/'}>Lead</Link> Order },
+    
+    // { key: 'kyc', icon: <FileDoneOutlined />, label: <Link to={'/kyc'}>kyc</Link> },
+    // {
+    //   key: 'invoice',
+    //   icon: <FileTextOutlined />,
+    //   label: <Link to={'/invoice'}>{('invoice')}</Link>,
+    // },
+    // {
+    //   key: 'quote',
+    //   icon: <FileSyncOutlined />,
+    //   label: <Link to={'/quote'}>{('quote')}</Link>,
+    // },
+    // {
+    //   key: 'payment',
+    //   icon: <CreditCardOutlined />,
+    //   label: <Link to={'/payment'}>{('payment')}</Link>,
+    // },
     {
       key: 'employee',
       icon: <UserOutlined />,
-      label: <Link to={'/employee'}>{translate('employee')}</Link>,
+      label: <Link to={'/employee'}>{('employee')}</Link>,
     },
     {
       key: 'admin',
       icon: <TeamOutlined />,
-      label: <Link to={'/admin'}>{translate('admin')}</Link>,
+      label: <Link to={'/admin'}>{('admin')}</Link>,
     },
     {
-      label: translate('Settings'),
+      label: ('Settings'),
       key: 'settings',
       icon: <SettingOutlined />,
       children: [
         {
           key: 'generalSettings',
-          label: <Link to={'/settings'}>{translate('general_settings')}</Link>,
+          label: <Link to={'/settings'}>{('general_settings')}</Link>,
         },
         {
           key: 'emailTemplates',
-          label: <Link to={'/email'}>{translate('email_templates')}</Link>,
+          label: <Link to={'/email'}>{('email_templates')}</Link>,
         },
         {
           key: 'paymentMode',
-          label: <Link to={'/payment/mode'}>{translate('payment_mode')}</Link>,
+          label: <Link to={'/payment/mode'}>{('payment_mode')}</Link>,
         },
         {
           key: 'advancedSettings',
-          label: <Link to={'/settings/advanced'}>{translate('advanced_settings')}</Link>,
+          label: <Link to={'/settings/advanced'}>{('advanced_settings')}</Link>,
         },
       ],
     },

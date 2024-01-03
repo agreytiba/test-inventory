@@ -9,6 +9,8 @@ const NotFound = lazy(() => import('@/pages/NotFound.jsx'));
 const Dashboard = lazy(() => import('@/pages/Dashboard'));
 const Customer = lazy(() => import('@/pages/Customer'));
 const Inventory = lazy(() => import('@/pages/Inventory'));
+const Item = lazy(() => import('@/pages/Inventory/Item'));
+const ItemMerge= lazy(() => import('@/pages/Inventory/ItemMerge'));
 const Order = lazy(() => import('@/pages/Order'));
 const Invoice = lazy(() => import('@/pages/Invoice'));
 const InvoiceCreate = lazy(() => import('@/pages/Invoice/InvoiceCreate'));
@@ -57,8 +59,12 @@ export default function AppRouter() {
       element: <Customer />,
     },
     {
-      path: '/inventory',
-      element: <Inventory />,
+      path: '/item',
+      element: <Item/>,
+    },
+    {
+      path: '/itemMerge',
+      element: <ItemMerge/>,
     },
     {
       path: '/order',
@@ -101,7 +107,7 @@ export default function AppRouter() {
       element: <QuoteUpdate />,
     },
     {
-      path: '/payment',
+      path: '/payment/received',
       element: <Payment />,
     },
     {

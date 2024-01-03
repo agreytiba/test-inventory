@@ -2,11 +2,8 @@ import { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-
 import useLanguage from '@/locale/useLanguage';
-
-import { Form, Button, Layout, Col, Divider, Typography } from 'antd';
-
+import { Form, Button, Layout, Col, Divider, Typography} from 'antd';
 import { login } from '@/redux/auth/actions';
 import { selectAuth } from '@/redux/auth/selectors';
 import LoginForm from '@/forms/LoginForm';
@@ -14,7 +11,7 @@ import AuthLayout from '@/layout/AuthLayout';
 import SideContent from '@/components/SideContent';
 import SelectLanguage from '@/components/SelectLanguage';
 
-import logo from '@/style/images/logo.png';
+
 
 const { Content } = Layout;
 const { Title } = Typography;
@@ -32,29 +29,41 @@ const LoginPage = () => {
   useEffect(() => {
     if (isSuccess) navigate('/');
   }, [isSuccess]);
+   
+
   return (
     <>
-      <div >
+      <AuthLayout sideContent={<SideContent />} >
         <Content
           style={{
             padding: '10px 20px',
           }}
         >
-          <SelectLanguage />
+      
+           <SelectLanguage />
         </Content>
         <Content
           style={{
-            padding: '140px 30px 30px',
+            padding: '20px',
             maxWidth: '440px',
             margin: '0 auto',
           }}
         >
-         
-          <Title level={1}>ATK INVENTORY</Title>
-          <Title level={2}>{translate('Sign in')}</Title>
+          <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 0 }} span={0}>
+            <img
+              src=""
+              alt="Logo"
+              style={{
+                margin: '-70px auto 40px',
+                display: 'block',
+              }}
+            />
+            <div className="space50"></div>
+          </Col>
+          <Title style={{textAlign:"center"}} level={1}>{translate('Sign in')}</Title>
 
           <Divider />
-          <div className="site-layout-content">
+          <div className="site-layout-content" style={{boxShadow:"0 0 3px #000",padding:"20px"}} >
             <Form
               layout="vertical"
               name="normal_login"
@@ -80,7 +89,7 @@ const LoginPage = () => {
             </Form>
           </div>
         </Content>
-      </div>
+      </AuthLayout>
     </>
   );
 };

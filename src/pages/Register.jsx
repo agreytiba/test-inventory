@@ -21,7 +21,7 @@ const RegisterPage = () => {
       <AuthLayout sideContent={<SideContent />}>
         <Content
           style={{
-            padding: '200px 30px 30px',
+            padding: '30px 30px 30px',
             maxWidth: '440px',
             margin: '0 auto',
           }}
@@ -37,10 +37,10 @@ const RegisterPage = () => {
             />
             <div className="space50"></div>
           </Col>
-          <Title level={1}>{translate('Sign up')}</Title>
+          <Title level={1} style={{textAlign:"center"}}>{translate('Sign up')}</Title>
 
           <Divider />
-          <div className="site-layout-content">
+          <div className="site-layout-content" style={{boxShadow:"0 0 3px #000",padding:"20px"}}>
             <Form
               name="signup"
               className="login-form"

@@ -1,8 +1,18 @@
 import React from 'react';
-import { Layout, Row, Col } from 'antd';
+import { Layout, Row, Col} from 'antd';
+import { LoginOutlined, FileTextOutlined } from '@ant-design/icons';
+import NavigationLinks from '@/components/NavigationLinks';
+
+const menuItems = [
+  // { key: '1', icon: <HomeOutlined />, link: '/home', title: 'Home' },
+  { key: '2', icon: <LoginOutlined />, link: '/login', title: 'Login' },
+  { key: '3', icon: <FileTextOutlined />, link: '/register', title: 'Register' },
+  // Add more menu items as needed
+];
 export default function AuthLayout({ sideContent, children }) {
   return (
     <Layout>
+     <NavigationLinks menuItems={menuItems}/>
       <Row>
         <Col
           xs={{ span: 0, order: 2 }}

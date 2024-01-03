@@ -14,7 +14,7 @@ import Localization from '@/locale/Localization';
 const ErpApp = lazy(() => import('./ErpApp'));
 const AuthRouter = lazy(() => import('@/router/AuthRouter'));
 
-export default function IdurarOs() {
+export default function AppOs() {
   const { isLoggedIn } = useSelector(selectAuth);
 
 
