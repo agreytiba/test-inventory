@@ -7,7 +7,7 @@ import InvoiceDataTableModule from '@/modules/InvoiceModule/InvoiceDataTableModu
 
 export default function Invoice() {
   const translate = useLanguage();
-  const entity = 'invoice';
+  const entity = 'salsOrder';
   const { moneyRowFormatter } = useMoney();
 
   const searchConfig = {

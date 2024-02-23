@@ -13,6 +13,7 @@
     "axios": "0.27.2",
     "cross-env": "7.0.3",
     "currency.js": "2.0.4",
+    "dayjs": "^1.11.10",
     "just-compare": "^2.3.0",
     "module-alias": "^2.2.3",
     "nodemailer": "^6.9.7",

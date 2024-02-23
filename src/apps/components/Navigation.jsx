@@ -57,25 +57,30 @@ function Sidebar({ collapsible }) {
       icon: <CustomerServiceOutlined />,
       label: <Link to={'/customer'}>{('customer')}</Link>,
     },
-      {
-      label: ('Inventory'),
-      key: 'inventory',
-      icon: <FileDoneOutlined />,
-      children: [
-        {
-          key: 'items',
-          label: <Link to={'/item'}>{('items')}</Link>,
-        },
-        {
-          key: 'itemAdjust',
-          label: <Link to={'/item/adjustment'}>{('item_adjustment')}</Link>,
-        },
-        {
-          key: 'itemMerge',
-          label: <Link to={'/itemMerge'}>{('item_merge')}</Link>,
-        }
-      ],
+     {
+      key: 'items',
+      icon: <CustomerServiceOutlined />,
+      label: <Link to={'/item'}>{('items')}</Link>,
     },
+    //   {
+    //   label: ('Inventory'),
+    //   key: 'inventory',
+    //   icon: <FileDoneOutlined />,
+    //   children: [
+    //     {
+    //       key: 'items',
+    //       label: <Link to={'/item'}>{('items')}</Link>,
+    //     },
+    //     {
+    //       key: 'itemAdjust',
+    //       label: <Link to={'/item/adjustment'}>{('item_adjustment')}</Link>,
+    //     },
+    //     {
+    //       key: 'itemMerge',
+    //       label: <Link to={'/itemMerge'}>{('item_merge')}</Link>,
+    //     }
+    //   ],
+    // },
        {
       label: ('Sales'),
       key: 'sales',
@@ -116,14 +121,14 @@ function Sidebar({ collapsible }) {
           key: 'bills',
           label: <Link to={'/bills'}>{('bills')}</Link>,
         },
-        {
-          key: 'paymade',
-          label: <Link to={'/payment/made'}>{('payment_made')}</Link>,
-        },
-        {
-          key: 'purchaseReceives',
-          label: <Link to={'/purchase/receives'}>{('receives')}</Link>,
-        },
+        // {
+        //   key: 'paymade',
+        //   label: <Link to={'/payment/made'}>{('payment_made')}</Link>,
+        // },
+        // {
+        //   key: 'purchaseReceives',
+        //   label: <Link to={'/purchase/receives'}>{('receives')}</Link>,
+        // },
       ],
     },
   
